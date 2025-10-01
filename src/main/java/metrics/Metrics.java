@@ -8,6 +8,8 @@ public final class Metrics {
     private static final AtomicInteger depthMax = new AtomicInteger();
     private static final AtomicLong comparisons = new AtomicLong();
     private static final AtomicLong allocations = new AtomicLong();
+    private static final AtomicLong arrayAccess = new AtomicLong();
+
 
 
     public static void reset() {
@@ -15,6 +17,7 @@ public final class Metrics {
         allocations.set(0);
         depth.remove();
         depthMax.set(0);
+        arrayAccess.set(0);
     }
 
     public static void enter() {
@@ -34,6 +37,10 @@ public final class Metrics {
         long a = allocations.get()+1;
         allocations.set(a);
     }
+    public static void incrementArrayAccess(){
+        long aa = arrayAccess.get()+1;
+        arrayAccess.set(aa);
+    }
 
     public static int getDepthMax() {
         return depthMax.get();
@@ -46,7 +53,7 @@ public final class Metrics {
     }
 
     public static String getInfo() {
-        return comparisons.get() + "," + allocations.get() + "," + depthMax.get();
+        return comparisons.get() + "," + allocations.get() + "," + depthMax.get()+"," + arrayAccess.get();
     }
 
 }
