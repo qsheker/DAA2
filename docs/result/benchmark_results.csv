@@ -1,0 +1,9 @@
+Algorithm,n,time_ms,comparisons,allocations,depthMax,arrayAccess
+Kadane,100,0,085,198,0,0,101
+Majority,100,0,066,300,0,0,200
+Kadane,1000,0,140,1998,0,0,1001
+Majority,1000,0,195,2999,0,0,2000
+Kadane,10000,0,889,19998,0,0,10001
+Majority,10000,0,970,29995,0,0,20000
+Kadane,100000,5,781,199998,0,0,100001
+Majority,100000,9,265,299941,0,0,200000
